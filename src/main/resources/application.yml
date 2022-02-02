@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  cache:
+    cache-names:
+      - rate-limit-cache
+      - fuck-yeah-cache
+    caffeine:
+      spec: maximumSize=100000,expireAfterAccess=3600s
+
+bucket4j:
+  enabled: true
+  filters:
+    - cache-name: rate-limit-cache
+      url: /.*
+      rate-limits:
+        - expression: "getHeader('X-User-Id')"
+          bandwidths:
+            - capacity: 5
+              time: 10
+              unit: seconds
+              fixed-refill-interval: 10
+              fixed-refill-interval-unit: seconds
+rest:
+  foaas-base-url: "https://www.foaas.com"
