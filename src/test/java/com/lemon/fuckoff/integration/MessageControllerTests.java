@@ -22,7 +22,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-@ActiveProfiles("test")
 @MockServerTest("rest.foaas-base-url=http://localhost:${mockServerPort}")
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
@@ -51,9 +50,9 @@ class MessageControllerTests {
 
     @Test
     public void testSuccessResponseWhenCallToFoaas() throws Exception {
-        String responseBodyFoaas = "{\"message\": \"Fuck YEAH!\"}";
+        String responseBodyFoaas = "{\"message\": \"Fuck YEAH!!\"}";
         createGetMock("/yeah/lemon", responseBodyFoaas, 200);
-        mockMvc.perform((MockMvcRequestBuilders.get("/message")).header("X-User-Id", 1234)).andExpect(status().isOk()).andExpect(jsonPath("$.message", Matchers.is("Fuck YEAH!")));
+        mockMvc.perform((MockMvcRequestBuilders.get("/message")).header("X-User-Id", 1234)).andExpect(status().isOk()).andExpect(jsonPath("$.message", Matchers.is("Fuck YEAH!!")));
     }
 
     @Test
