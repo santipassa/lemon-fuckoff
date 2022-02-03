@@ -15,7 +15,7 @@ public class MessageServiceImpl implements IMessageService {
     @Override
     public MessageResponseDTO getMessage() {
         MessageResponseDTO messageResponseDTO = fuckOffService.getFuckYeahMessage();
-        log.info(String.format("Message from foaas API: %s", messageResponseDTO.getMessage()));
+        log.info(String.format("Message from foaas API: '%s'", messageResponseDTO.getMessage()));
         return messageResponseDTO;
     }
 }
