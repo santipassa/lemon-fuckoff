@@ -60,7 +60,7 @@ curl --location --request GET 'localhost:8080/message' \
 --header 'X-User-Id: 1234'
 ```
 
-> Tip 1: The header X-User-Id must be 1234 if you don send this you will receive a 401 status code.
+> Tip 1: The header X-User-Id must be 1234 if you don't send this you will receive a 401 status code.
 
 > Tip 2: You only can use this service 5 times in 10 seconds time window. If you exceed this quota you will receive 429 status code.
 
