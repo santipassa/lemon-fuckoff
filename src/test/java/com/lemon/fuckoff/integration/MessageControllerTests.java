@@ -22,13 +22,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @MockServerTest("rest.foaas-base-url=http://localhost:${mockServerPort}")
-@ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
 @SpringBootTest
 class MessageControllerTests {
-
-    @Value("${rest.foaas-base-url}")
-    private String serverUrl;
 
     private MockServerClient mockServerClient;
 
