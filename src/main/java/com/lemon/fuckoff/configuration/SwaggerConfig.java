@@ -34,7 +34,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
                 "API consuming foaas service.",
                 "API TOS",
                 "Terms of service",
-                new Contact("Santiago Passalacqua", "www.lemon.me", "passalacquasantiago@gmail.com.com"),
+                new Contact("Santiago Passalacqua", "www.lemon.me", "passalacquasantiago@gmailcom"),
                 "License of API", "API license URL", Collections.emptyList());
     }
 
