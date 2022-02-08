@@ -3,23 +3,19 @@ server:
 spring:
   cache:
     cache-names:
-      - rate-limit-cache
       - fuck-yeah-cache
     caffeine:
       spec: maximumSize=100000,expireAfterAccess=3600s
+  redis:
+    database: 0
+    host: "localhost"
+    port: 6379
 
-bucket4j:
-  enabled: true
-  filters:
-    - cache-name: rate-limit-cache
-      url: /.*
-      rate-limits:
-        - expression: "getHeader('X-User-Id')"
-          bandwidths:
-            - capacity: 5
-              time: 10
-              unit: seconds
-              fixed-refill-interval: 10
-              fixed-refill-interval-unit: seconds
 rest:
   foaas-base-url: "https://www.foaas.com"
+
+rate-limit:
+  refill:
+    period: 10
+    unit: "seconds"
+  bucket-size: 5

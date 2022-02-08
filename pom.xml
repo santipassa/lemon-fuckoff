@@ -18,7 +18,6 @@
         <java.version>11</java.version>
         <swagger.version>3.0.0</swagger.version>
         <cache.version>2.8.2</cache.version>
-        <bucket4j.version>0.2.0</bucket4j.version>
     </properties>
     <dependencies>
         <dependency>
@@ -35,12 +34,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.giffing.bucket4j.spring.boot.starter</groupId>
-            <artifactId>bucket4j-spring-boot-starter</artifactId>
-            <version>${bucket4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -81,6 +74,10 @@
             <groupId>org.mock-server</groupId>
             <artifactId>mockserver-spring-test-listener</artifactId>
             <version>5.11.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
 
