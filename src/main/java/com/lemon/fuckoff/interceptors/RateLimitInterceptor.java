@@ -1,6 +1,6 @@
 package com.lemon.fuckoff.interceptors;
 
-import com.lemon.fuckoff.ratelimit.RateLimitService;
+import com.lemon.fuckoff.services.ratelimit.RateLimitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

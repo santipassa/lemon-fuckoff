@@ -1,4 +1,4 @@
-package com.lemon.fuckoff.ratelimit;
+package com.lemon.fuckoff.services.ratelimit;
 
 import com.lemon.fuckoff.exceptions.TooManyRequestsException;
 import lombok.extern.slf4j.Slf4j;
