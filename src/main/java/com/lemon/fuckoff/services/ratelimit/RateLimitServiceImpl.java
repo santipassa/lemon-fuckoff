@@ -31,15 +31,15 @@ public class RateLimitServiceImpl implements RateLimitService {
     @Override
     public void tryToConsume(String key) {
         if (isTimeToRefill(key)) {
-            log.info(String.format("Time to refill bucket"));
+            log.info("Time to refill bucket");
             refillBucket(key);
         } else {
             int availableLimit = getAvailableLimit(key);
             if (availableLimit == 0) {
-                log.warn(String.format("Request without available limit"));
+                log.warn("Request without available limit");
                 throw new TooManyRequestsException("Too many requests, try later");
             }
-            log.info(String.format("Decrement available limit"));
+            log.info("Decrement available limit");
             saveCurrentAvailableLimit(key, availableLimit - 1);
         }
     }
@@ -56,8 +56,8 @@ public class RateLimitServiceImpl implements RateLimitService {
         rateLimitCache.save(String.format(AVAILABLE_BUCKET_KEY, key), availableRequests.toString());
     }
 
-    private Integer getAvailableLimit(String userId) {
-        return Integer.parseInt(rateLimitCache.get(String.format(AVAILABLE_BUCKET_KEY, userId)));
+    private Integer getAvailableLimit(String key) {
+        return Integer.parseInt(rateLimitCache.get(String.format(AVAILABLE_BUCKET_KEY, key)));
     }
 
     private void refillBucket(String key) {
