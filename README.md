@@ -6,6 +6,7 @@ Project for lemon interview
 
 ![java 11](https://img.shields.io/badge/java-11-orange.svg)
 ![springboot 2.6.3](https://img.shields.io/badge/springboot-2.5.6-272822.svg)
+![redis 6.2.6](https://img.shields.io/badge/redis-6.2.6-red)
 
 ## Documentation
 
@@ -42,10 +43,17 @@ $ docker run --name lemon-fuckoff -p 8080:8080 lemon-fuckoff:latest
 ## Running it without Docker:
 
 ```bash 
+$ redis-server
+```
+
+```bash 
 $ mvn spring-boot:run 
 ```
 
 ## Testing:
+```bash 
+$ redis-server
+```
 
 ```bash 
 $ mvn test 
@@ -54,13 +62,12 @@ $ mvn test
 ## How to use:
 
 ### Get message from FOAAS API:
-
 ``` bash
-curl --location --request GET 'localhost:8080/message' \
+$ curl --location --request GET 'localhost:8080/message' \
 --header 'X-User-Id: 1234'
 ```
 
-> Tip 1: The header X-User-Id must be 1234 if you don't send this you will receive a 401 status code.
+> Tip 1: The header X-User-Id must be different null or empty if you don't send this you will receive a 401 status code.
 
 > Tip 2: You only can use this service 5 times in 10 seconds time window. If you exceed this quota you will receive 429 status code.
 

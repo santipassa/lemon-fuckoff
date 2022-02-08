@@ -1,7 +1,7 @@
 package com.lemon.fuckoff.services;
 
 import com.lemon.fuckoff.dto.MessageResponseDTO;
-import com.lemon.fuckoff.services.rest.RestServiceImpl;
+import com.lemon.fuckoff.services.rest.RestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
@@ -12,10 +12,10 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 
 @Service
-public class FuckOffServiceImpl implements IFuckOffService {
+public class FuckOffServiceImpl implements FuckOffService {
 
     @Autowired
-    private RestServiceImpl restService;
+    private RestService restService;
 
     @Value("${rest.foaas-base-url}")
     private String foaasBaseUrl;

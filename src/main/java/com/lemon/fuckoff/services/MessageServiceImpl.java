@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class MessageServiceImpl implements IMessageService {
+public class MessageServiceImpl implements MessageService {
 
     @Autowired
-    IFuckOffService fuckOffService;
+    FuckOffService fuckOffService;
 
     @Override
     public MessageResponseDTO getMessage() {

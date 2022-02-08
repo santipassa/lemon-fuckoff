@@ -1,7 +1,6 @@
 package com.lemon.fuckoff.controllers;
 
-
-import com.lemon.fuckoff.services.IMessageService;
+import com.lemon.fuckoff.services.MessageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class MessageController {
     @Autowired
-    IMessageService messageService;
+    MessageService messageService;
 
     /**
      * Retrieves a message telling to fuck off.

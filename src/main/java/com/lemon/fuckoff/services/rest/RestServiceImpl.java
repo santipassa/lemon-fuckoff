@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class RestServiceImpl implements IRestService {
+public class RestServiceImpl implements RestService {
 
     @Autowired
     private RestTemplate restTemplate;
