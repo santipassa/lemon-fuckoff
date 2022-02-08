@@ -19,3 +19,5 @@ rate-limit:
     period: 10
     unit: "seconds"
   bucket-size: 5
+
+users-white-list: 12345, 1234, 1111
