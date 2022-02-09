@@ -14,7 +14,6 @@ import java.util.List;
 
 @Component
 @Slf4j
-@ConfigurationProperties(prefix = "authorization")
 public class AuthorizationInterceptor implements HandlerInterceptor {
 
     private static final String HEADER_USER_ID = "X-User-Id";
