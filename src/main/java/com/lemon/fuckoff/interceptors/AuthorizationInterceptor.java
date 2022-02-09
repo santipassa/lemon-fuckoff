@@ -22,6 +22,7 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
     List<String> usersInWhiteList;
 
 
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         String userId = request.getHeader(HEADER_USER_ID);
